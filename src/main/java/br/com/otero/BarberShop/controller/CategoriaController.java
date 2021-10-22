@@ -15,8 +15,8 @@ public class CategoriaController {
 
     @GetMapping
     public List<Categoria> listar(){
-       Categoria cat1 = Categoria.builder().id(1).nome("cerveja").build();
-       Categoria cat2 = Categoria.builder().id(2).nome("refrigerante").build();
+       Categoria cat1 = Categoria.builder().id(1L).nome("cerveja").build();
+       Categoria cat2 = Categoria.builder().id(2L).nome("refrigerante").build();
 
         List<Categoria> lista = new ArrayList<>();
 
