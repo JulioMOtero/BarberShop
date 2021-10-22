@@ -17,7 +17,7 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private Pessoa pessoa;
+//    private Pessoa pessoa;
     private String email;
     private Integer qtdCortes;
 }

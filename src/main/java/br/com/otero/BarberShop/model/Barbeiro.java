@@ -9,6 +9,6 @@ import java.util.List;
 @Builder
 public class Barbeiro {
 
-    private Funcionario funcionario;
+//    private Funcionario funcionario;
     private List<String> agenda;
 }
