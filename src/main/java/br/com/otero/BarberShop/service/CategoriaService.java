@@ -17,12 +17,11 @@ public class CategoriaService {
 
     public List<Categoria> obterCategoria(Long id) {
         Optional<Categoria> categorias = this.categoriaRepository.findById(id);
-            return categorias.stream().map(categoria ->{
-                return Categoria.builder()
-                        .id(categoria.getId())
-                        .nome(categoria.getNome())
-                        .build();
-                    }).collect(Collectors.toList());
+            return categorias.stream().map(categoria ->
+                    Categoria.builder()
+                    .id(categoria.getId())
+                    .nome(categoria.getNome())
+                    .build()).collect(Collectors.toList());
     }
 
 }
