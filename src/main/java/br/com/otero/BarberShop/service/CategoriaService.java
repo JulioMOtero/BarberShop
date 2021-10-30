@@ -21,6 +21,7 @@ public class CategoriaService {
                     Categoria.builder()
                     .id(categoria.getId())
                     .nome(categoria.getNome())
+                            .produtos(categoria.getProdutos())
                     .build()).collect(Collectors.toList());
     }
 

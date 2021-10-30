@@ -1,6 +1,7 @@
 package br.com.otero.BarberShop.model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class Categoria implements Serializable {
     private Long id;
     private String nome;
 
+    @JsonManagedReference
     @OneToMany
     private List<Produto> produtos = new ArrayList<>();
 }
