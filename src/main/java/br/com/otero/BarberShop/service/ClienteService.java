@@ -5,7 +5,6 @@ import br.com.otero.BarberShop.model.Cliente;
 import br.com.otero.BarberShop.model.dto.ClienteRequest;
 import br.com.otero.BarberShop.model.dto.ClienteResponse;
 import br.com.otero.BarberShop.repository.ClienteRepository;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

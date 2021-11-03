@@ -40,7 +40,7 @@ public class ClienteController {
     @DeleteMapping("deletar/{id}")
     public ResponseEntity<String> deletarCliente(@PathVariable Long id){
         this.clienteService.deletar(id);
-        return ResponseEntity.ok("id: "+id+" deletado");
+        return ResponseEntity.ok("Cliente id: "+id+" deletado");
 
     }
 
