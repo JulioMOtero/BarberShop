@@ -31,6 +31,6 @@ public class Produto {
     private Categoria categoria;
 
     @ManyToOne
-    @JoinColumn(name = "venda_id")
+//    @JoinColumn(name = "venda_id")
     private Venda venda;
 }
