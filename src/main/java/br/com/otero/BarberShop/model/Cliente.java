@@ -1,6 +1,7 @@
 package br.com.otero.BarberShop.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+    @JsonProperty("EMAIL")
     private String email;
     private Integer qtdCortes;
 }

@@ -2,6 +2,8 @@ package br.com.otero.BarberShop.service;
 
 
 import br.com.otero.BarberShop.model.Cliente;
+import br.com.otero.BarberShop.model.dto.ClienteRequest;
+import br.com.otero.BarberShop.model.dto.ClienteResponse;
 import br.com.otero.BarberShop.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,5 +31,19 @@ public class ClienteService {
     }
     public List<Cliente> todosClientes(){
         return this.clienteRepository.findAll();
+    }
+
+    public ClienteResponse novoCliente(ClienteRequest newCliente) {
+        Cliente cliente = Cliente.builder()
+                .email(newCliente.getEmail())
+                .qtdCortes(0)
+                .build();
+
+        this.clienteRepository.save(cliente);
+
+
+        return ClienteResponse.builder()
+                .id(cliente.getId())
+                .build();
     }
 }
