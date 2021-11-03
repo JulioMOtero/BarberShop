@@ -14,7 +14,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/cliente")
 public class ClienteController {
 
     @Autowired
@@ -35,6 +35,13 @@ public class ClienteController {
     @PostMapping("/novo")
     public ResponseEntity<ClienteResponse> novoCliente(@RequestBody ClienteRequest email){
         return ResponseEntity.created(URI.create("")).body(this.clienteService.novoCliente(email));
+    }
+
+    @DeleteMapping("deletar/{id}")
+    public ResponseEntity<String> deletarCliente(@PathVariable Long id){
+        this.clienteService.deletar(id);
+        return ResponseEntity.ok("id: "+id+" deletado");
+
     }
 
 }

@@ -5,6 +5,7 @@ import br.com.otero.BarberShop.model.Cliente;
 import br.com.otero.BarberShop.model.dto.ClienteRequest;
 import br.com.otero.BarberShop.model.dto.ClienteResponse;
 import br.com.otero.BarberShop.repository.ClienteRepository;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -45,5 +46,11 @@ public class ClienteService {
         return ClienteResponse.builder()
                 .id(cliente.getId())
                 .build();
+    }
+
+    public void deletar(Long id) {
+        List<Cliente> cliente = listaCliente(id);
+       this.clienteRepository.deleteAll(cliente);
+
     }
 }
