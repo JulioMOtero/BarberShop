@@ -2,6 +2,7 @@ package br.com.otero.BarberShop.service;
 
 
 import br.com.otero.BarberShop.model.Categoria;
+import br.com.otero.BarberShop.model.Cliente;
 import br.com.otero.BarberShop.model.Produto;
 import br.com.otero.BarberShop.repository.CategoriaRepository;
 import br.com.otero.BarberShop.repository.ProdutoRepository;
@@ -31,7 +32,9 @@ public class ProdutoService {
                         .categoria(produto.getCategoria())
                         .build()).collect(Collectors.toList());
     }
-
+    public List<Produto> todosProdutos(){
+        return this.produtoRepository.findAll();
+    }
 
     }
 
