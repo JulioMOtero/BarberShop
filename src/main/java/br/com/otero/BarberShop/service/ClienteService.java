@@ -5,6 +5,7 @@ import br.com.otero.BarberShop.model.Cliente;
 import br.com.otero.BarberShop.model.dto.ClienteRequest;
 import br.com.otero.BarberShop.model.dto.ClienteResponse;
 import br.com.otero.BarberShop.repository.ClienteRepository;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -52,4 +53,13 @@ public class ClienteService {
        this.clienteRepository.deleteAll(cliente);
 
     }
+
+    public void corte(Long id_cli) throws NotFoundException {
+        Cliente cliente = this.clienteRepository.findById(id_cli).orElseThrow(() -> new NotFoundException("id: " + id_cli + " Não encontrado"));
+        Integer qtdCortes = cliente.getQtdCortes();
+
+        qtdCortes = qtdCortes+1;
+    }
+
+
 }

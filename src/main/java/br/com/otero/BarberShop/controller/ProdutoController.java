@@ -1,8 +1,6 @@
 package br.com.otero.BarberShop.controller;
 
 
-import br.com.otero.BarberShop.model.Categoria;
-import br.com.otero.BarberShop.model.Cliente;
 import br.com.otero.BarberShop.model.Produto;
 import br.com.otero.BarberShop.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +26,7 @@ public class ProdutoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<List<Produto>> listarProduto(@PathVariable Long id) {
-        return ResponseEntity.ok(produtoService.obterProdutoPorCategoria(id));
+        return ResponseEntity.ok(produtoService.obterProduto(id));
     }
 
 }

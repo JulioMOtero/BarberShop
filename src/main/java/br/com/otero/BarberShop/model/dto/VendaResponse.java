@@ -1,6 +1,8 @@
 package br.com.otero.BarberShop.model.dto;
 
 
+import br.com.otero.BarberShop.model.Venda;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +16,10 @@ import java.util.Date;
 @NoArgsConstructor
 public class VendaResponse {
 
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
     private Date horarioMarcado ;
+
+//    @mappedBy(Venda.class)
+//    private Long id;
 
 }

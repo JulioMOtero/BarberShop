@@ -8,8 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -18,19 +17,19 @@ import java.util.List;
 @Entity
 public class Produto {
 
+    @OneToMany(mappedBy = "produto")
+//    @JoinTable(
+//            name = "produto_venda",
+//            joinColumns = @JoinColumn(name = "id_produto"),
+//            inverseJoinColumns = @JoinColumn(name = "id_venda"))
+    Set<ProdutoVenda> qtdProdutos;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private Double preco;
-
-
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
-
-    @ManyToOne
-//    @JoinColumn(name = "venda_id")
-    private Venda venda;
 }

@@ -23,4 +23,7 @@ public class VendaRequest {
     @NotEmpty
     private Long id_cli;
 
+
+
+
 }

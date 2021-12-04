@@ -22,7 +22,7 @@ public class ProdutoService {
     @Autowired
     CategoriaRepository categoriaRepository;
 
-    public List<Produto> obterProdutoPorCategoria(Long id) {
+    public List<Produto> obterProduto(Long id) {
         Optional<Produto> produtos = this.produtoRepository.findById(id);
         return produtos.stream().map(produto ->
                 Produto.builder()
