@@ -22,7 +22,7 @@ public class Produto {
 //            name = "produto_venda",
 //            joinColumns = @JoinColumn(name = "id_produto"),
 //            inverseJoinColumns = @JoinColumn(name = "id_venda"))
-    Set<ProdutoVenda> qtdProdutos;
+    Set<ProdutoVenda> venda;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

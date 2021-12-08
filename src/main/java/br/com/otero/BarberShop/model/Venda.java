@@ -19,7 +19,7 @@ public class Venda {
 
 
     @OneToMany(mappedBy = "venda")
-    Set<ProdutoVenda> qtdProdutos;
+    Set<ProdutoVenda> produtos;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,6 +27,7 @@ public class Venda {
     private Date agendamento;
     private Long id_Funcionario;
     private Long id_Cliente;
-    private Boolean pago = false;
     private Double valorTotal;
+    private Boolean pago = false;
+
 }
