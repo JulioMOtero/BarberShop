@@ -22,12 +22,12 @@ public class Venda {
     Set<ProdutoVenda> produtos;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_venda;
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private Date agendamento;
+    private Date id_agendamento;
     private Long id_Funcionario;
     private Long id_Cliente;
-    private Double valorTotal;
+    private Double valor_Total;
     private Boolean pago = false;
 
 }

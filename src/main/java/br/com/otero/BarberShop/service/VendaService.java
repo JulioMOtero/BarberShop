@@ -35,7 +35,7 @@ public class VendaService {
         Venda venda = Venda.builder()
                 .id_Funcionario(id_fun)
                 .id_Cliente(id_cli)
-                .agendamento(new Date())
+                .id_agendamento(new Date())
                 .pago(false)
                 .build();
 
